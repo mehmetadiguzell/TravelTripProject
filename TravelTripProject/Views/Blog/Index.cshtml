@@ -1,0 +1,60 @@
+﻿@model TravelTripProject.Models.Classes.BlogYorum
+@{
+    ViewBag.Title = "Bloglar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Travel Blog </title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates" />
+
+</head>
+<body>
+
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var blog in Model.WmBlog)
+                {
+                    <div class="single-grid">
+                        <img src="@blog.BlogImage" alt="" />
+                        <h3 class="text-info">@blog.Baslik</h3>
+
+                        <p>
+                            @blog.Aciklama.Substring(0, 250)...
+                        </p>
+                        <a href="/Blog/BlogDetay/@blog.Id" class="btn btn-default">Daha Fazlasını Gör</a>
+                    </div>
+
+                    <h4 class="text-danger">-------------------------------------------------------------------------------------------------------------------------</h4>
+                    <br />
+                }
+
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>Son Bloglar</h3>
+                    <ul>
+                        @foreach (var sonbloglar in Model.SonBloglar)
+                        {
+                            <li><a href="/Blog/BlogDetay/@sonbloglar.Id">@sonbloglar.Baslik</a></li>
+
+                        }
+
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,16 @@
+﻿@model List<TravelTripProject.Models.Classes.Blog>
+@{ 
+    int sayac = 1;
+}
+<div class="padding">
+    <h4>Haftanın En İyileri</h4>
+    <ul class="list list-pad">
+        @foreach (var item in Model)
+        {
+            <li class="list-bg"><span>@(sayac++).</span><a href="/Blog/BlogDetay/@item.Id">@item.Baslik</a></li>
+        }
+
+
+    </ul>
+    <a href="/Blog/Index" class="link1">Tümünü Gör</a>
+</div>

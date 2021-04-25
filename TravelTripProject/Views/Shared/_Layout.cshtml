@@ -1,0 +1,52 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/responsiveslides.min.js"></script>
+
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo"><a href="@Url.Action("Index","Home")"><img src="~/Content/images/logo.png" alt="" /></a></div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="~/Content/images/contact.png" alt="">
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Whatsapp : +90 123 456 78 90</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="@Url.Action("Index","Home")">Anasayfa</a></li>
+                <li><a class="hsubs" href="@Url.Action("Index","About")">Hakkımızda</a></li>
+                <li><a class="hsubs" href="@Url.Action("Index","Blog")">Blog</a></li>
+                <li><a href="@Url.Action("Index","Contact")">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class"content">
+        @RenderBody()
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>@DateTime.Now.Year</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@model TravelTripProject.Models.Classes.Hakkimizda
+@{
+    ViewBag.Title = "Güncelleme Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Güncelleme Sayfası</h2>
+
+<br />
+
+@using (Html.BeginForm("HakkimizdaGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Id)
+    @Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    @Html.LabelFor(m => m.FotoUrl)
+    @Html.TextBoxFor(m => m.FotoUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.Aciklama)
+    @Html.TextBoxFor(m => m.Aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+}
+
